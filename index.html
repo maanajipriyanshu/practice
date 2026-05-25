@@ -1,0 +1,1121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyanshu Singh | Data Analyst Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 10%;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            padding-top: 80px;
+        }
+
+        .intro {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-family: monospace;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .summary {
+            max-width: 600px;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--bg-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+        }
+
+        /* Sections General */
+        section {
+            padding: 6rem 10%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        /* Technical Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            color: var(--text-muted);
+        }
+
+        .skill-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Experience Section */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .job-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            color: var(--text-main);
+        }
+
+        .job-title span {
+            color: var(--accent);
+        }
+
+        .job-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-family: monospace;
+        }
+
+        .job-bullets {
+            padding-left: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .job-bullets li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .project-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: monospace;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+        }
+
+        /* Education & Certifications Grid */
+        .edu-cert-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .edu-cert-container {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
+            nav .nav-links {
+                display: none;
+            }
+        }
+
+        .edu-item, .cert-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-item h4, .cert-item h4 {
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+
+        .edu-sub, .cert-sub {
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
+
+        .edu-date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 10%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background-color: #0b1329;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--text-muted);
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">PS</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+    </nav>
+
+    <header id="about">
+        <p class="intro">Hi, my name is</p>
+        [span_0](start_span)<h1>Priyanshu Singh</h1>[span_0](end_span)
+        <h2>Data Analyst | [span_1](start_span)Predictive Analytics & BI</h2>[span_1](end_span)
+        <p class="summary">
+            [span_2](start_span)Experienced in sales analytics, predictive modeling, and business intelligence reporting within sales and healthcare domains[span_2](end_span). [span_3](start_span)Passionate about transforming historical transaction pipelines into operational clarity using SQL, Python, and Power BI[span_3](end_span). [span_4](start_span)Open to Junior Data Analyst and BI Analyst opportunities in Germany[span_4](end_span).
+        </p>
+        <div class="cta-buttons">
+            [span_5](start_span)<a href="mailto:maanapriyanshu@gmail.com" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> Contact Me</a>[span_5](end_span)
+            [span_6](start_span)<a href="https://linkedin.com/in/maanapriyanshurajput" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>[span_6](end_span)
+        </div>
+    </header>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-code"></i> Languages & Libs</h3>
+                <ul>
+                    [span_7](start_span)[span_8](start_span)<li>Python (Pandas, NumPy, Regex)[span_7](end_span)[span_8](end_span)</li>
+                    [span_9](start_span)<li>Scikit-learn, XGBoost, Random Forest[span_9](end_span)</li>
+                    [span_10](start_span)[span_11](start_span)<li>SQL (CTEs, Window Functions, Joins)[span_10](end_span)[span_11](end_span)</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-gears"></i> Data Processing</h3>
+                <ul>
+                    [span_12](start_span)<li>ETL Pipeline Construction[span_12](end_span)</li>
+                    [span_13](start_span)[span_14](start_span)<li>Data Cleaning & Validation[span_13](end_span)[span_14](end_span)</li>
+                    [span_15](start_span)[span_16](start_span)<li>Feature Engineering[span_15](end_span)[span_16](end_span)</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-chart-pie"></i> BI & Visualization</h3>
+                <ul>
+                    [span_17](start_span)[span_18](start_span)<li>Power BI (DAX, Drill-through, KPIs)[span_17](end_span)[span_18](end_span)</li>
+                    [span_19](start_span)[span_20](start_span)<li>Advanced Excel[span_19](end_span)[span_20](end_span)</li>
+                    [span_21](start_span)<li>Matplotlib, Seaborn, Tableau[span_21](end_span)</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-database"></i> Databases & Tools</h3>
+                <ul>
+                    [span_22](start_span)[span_23](start_span)<li>MySQL & PostgreSQL[span_22](end_span)[span_23](end_span)</li>
+                    [span_24](start_span)<li>Google BigQuery[span_24](end_span)</li>
+                    [span_25](start_span)[span_26](start_span)<li>Git, GitHub, VS Code[span_25](end_span)[span_26](end_span)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            
+            <div class="job-card">
+                <div class="job-header">
+                    <h3 class="job-title">Sales Data Analyst <span>@ Ikvans Healthcare Pvt. [span_27](start_span)Ltd.</span></h3>[span_27](end_span)
+                    [span_28](start_span)<span class="job-date">Jul 2025 - Feb 2026</span>[span_28](end_span)
+                </div>
+                <ul class="job-bullets">
+                    [span_29](start_span)<li>Analyzed ~30,000 batch-wise pharmaceutical sales records using Excel and SQL engines[span_29](end_span).</li>
+                    [span_30](start_span)<li>Determined key product demand patterns and evaluated structural inventory movements across distribution cycles[span_30](end_span).</li>
+                    [span_31](start_span)<li>Prepared comprehensive monthly sales reports and evaluated distributor performance to guide management's optimization strategy[span_31](end_span).</li>
+                    [span_32](start_span)<li>Isolated fast-moving vs. slow-moving stock lines to build foundational data models for proactive pricing structural configurations[span_32](end_span).</li>
+                </ul>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <h3 class="job-title">Data Analyst Intern <span>@ AAM Infotech Pvt. [span_33](start_span)Ltd.</span></h3>[span_33](end_span)
+                    [span_34](start_span)<span class="job-date">Jan 2025 - Jul 2025</span>[span_34](end_span)
+                </div>
+                <ul class="job-bullets">
+                    [span_35](start_span)<li>Cleaned and structured raw transactional datasets utilizing Python processing packages (Pandas, Regex) and analytical SQL queries[span_35](end_span).</li>
+                    [span_36](start_span)<li>Eliminated systemic duplicate data rows and verified complex relational constraints across normalized database targets[span_36](end_span).</li>
+                    [span_37](start_span)<li>Developed targeted Power BI reporting dashboards for cross-departmental KPI telemetry tracking structures[span_37](end_span).</li>
+                    [span_38](start_span)<li>Accelerated executive business intelligence extraction speeds for a dedicated team of senior data professionals[span_38](end_span).</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-content">
+                    [span_39](start_span)<h3>Rossmann Performance Insights</h3>[span_39](end_span)
+                    [span_40](start_span)<p>Analyzed 844,338 historical sales transactions across 1,115 stores in Germany to evaluate baseline performance factors impacting growth patterns, promotional strategies, and seasonality metrics[span_40](end_span).</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        [span_41](start_span)<span class="tag">PostgreSQL</span>[span_41](end_span)
+                        [span_42](start_span)[span_43](start_span)<span class="tag">Power BI</span>[span_42](end_span)[span_43](end_span)
+                        <span class="tag">Feature Engineering</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    [span_44](start_span)<a href="https://github.com/maanapriyanshurajput" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Repository</a>[span_44](end_span)
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    [span_45](start_span)<h3>Predictive Analytics for Sales Forecasting</h3>[span_45](end_span)
+                    [span_46](start_span)<p>Built statistical and machine learning models on top of historical transaction files to forecast demand trends, isolate seasonal spikes, and monitor general customer purchasing tendencies over time[span_46](end_span).</p>
+                    <div class="project-tags">
+                        [span_47](start_span)<span class="tag">Scikit-learn</span>[span_47](end_span)
+                        [span_48](start_span)<span class="tag">Predictive Modeling</span>[span_48](end_span)
+                        [span_49](start_span)<span class="tag">Time Series</span>[span_49](end_span)
+                        [span_50](start_span)<span class="tag">Power BI</span>[span_50](end_span)
+                    </div>
+                </div>
+                <div class="project-links">
+                    [span_51](start_span)<a href="https://github.com/maanapriyanshurajput" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Repository</a>[span_51](end_span)
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="edu-cert-container">
+            <div>
+                <h2 class="section-title">Education</h2>
+                <div class="edu-item">
+                    [span_52](start_span)<h4>MSc in Data Science</h4>[span_52](end_span)
+                    [span_53](start_span)<div class="edu-sub">Chandigarh University</div>[span_53](end_span)
+                    [span_54](start_span)<div class="edu-date">Aug 2024 - Jun 2026 (Expected)</div>[span_54](end_span)
+                </div>
+                <div class="edu-item">
+                    [span_55](start_span)<h4>Bachelor of Computer Applications (BCA)</h4>[span_55](end_span)
+                    <div class="edu-sub">L.N. [span_56](start_span)Mishra College of Business Management</div>[span_56](end_span)
+                    [span_57](start_span)<div class="edu-date">2020 - 2023</div>[span_57](end_span)
+                </div>
+                <div class="edu-item">
+                    <h4>Data Analytics Graduate Certificate</h4>
+                    [span_58](start_span)<div class="edu-sub">Ducat IT Training School</div>[span_58](end_span)
+                    [span_59](start_span)<div class="edu-date">Jul 2024 - Jul 2025</div>[span_59](end_span)
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">Certifications & Languages</h2>
+                <div class="cert-item">
+                    <h4>Professional Credentials</h4>
+                    <div class="cert-sub">IBM Data Science — Coursera</div>
+                    <div class="cert-sub">Career Essentials in Data Analysis — Microsoft & LinkedIn</div>
+                    <div class="cert-sub">Journey into Data Science with Python — CodeSignal</div>
+                </div>
+                <div class="cert-item">
+                    <h4>Languages</h4>
+                    <div class="cert-sub" style="color: var(--text-muted)">
+                        Native: <span style="color: var(--text-main)">Hindi</span><br>
+                        Professional: <span style="color: var(--text-main)">English</span><br>
+                        Learning: <span style="color: var(--text-main)">German (A2 Status)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+            [span_60](start_span)<a href="https://github.com/maanapriyanshurajput" target="_blank"><i class="fa-brands fa-github"></i></a>[span_60](end_span)
+            [span_61](start_span)<a href="https://linkedin.com/in/maanapriyanshurajput" target="_blank"><i class="fa-brands fa-linkedin"></i></a>[span_61](end_span)
+            [span_62](start_span)<a href="mailto:maanapriyanshu@gmail.com"><i class="fa-regular fa-envelope"></i></a>[span_62](end_span)
+        </div>
+        <p>&copy; 2026 Priyanshu Singh. Built for responsiveness and speed.</p>
+    </footer>
+
+</body>
+</html>
+
+```
+Here is a complete, modern, and responsive portfolio website designed to showcase your profile as a Data Analyst. It features a clean design, an active project showcase, and clear sections highlighting your professional experience and technical skills.
+You can save this code into a file named index.html and run it directly in any browser.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyanshu Singh | Data Analyst Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 10%;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            padding-top: 80px;
+        }
+
+        .intro {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-family: monospace;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .summary {
+            max-width: 600px;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--bg-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+        }
+
+        /* Sections General */
+        section {
+            padding: 6rem 10%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        /* Technical Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            color: var(--text-muted);
+        }
+
+        .skill-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Experience Section */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .job-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            color: var(--text-main);
+        }
+
+        .job-title span {
+            color: var(--accent);
+        }
+
+        .job-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-family: monospace;
+        }
+
+        .job-bullets {
+            padding-left: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .job-bullets li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .project-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: monospace;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+        }
+
+        /* Education & Certifications Grid */
+        .edu-cert-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .edu-cert-container {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
+            nav .nav-links {
+                display: none;
+            }
+        }
+
+        .edu-item, .cert-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-item h4, .cert-item h4 {
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+
+        .edu-sub, .cert-sub {
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
+
+        .edu-date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 10%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background-color: #0b1329;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--text-muted);
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">PS</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+    </nav>
+
+    <header id="about">
+        <p class="intro">Hi, my name is</p>
+        [span_0](start_span)<h1>Priyanshu Singh</h1>[span_0](end_span)
+        <h2>Data Analyst | [span_1](start_span)Predictive Analytics & BI</h2>[span_1](end_span)
+        <p class="summary">
+            [span_2](start_span)Experienced in sales analytics, predictive modeling, and business intelligence reporting within sales and healthcare domains[span_2](end_span). [span_3](start_span)Passionate about transforming historical transaction pipelines into operational clarity using SQL, Python, and Power BI[span_3](end_span). [span_4](start_span)Open to Junior Data Analyst and BI Analyst opportunities in Germany[span_4](end_span).
+        </p>
+        <div class="cta-buttons">
+            [span_5](start_span)<a href="mailto:maanapriyanshu@gmail.com" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> Contact Me</a>[span_5](end_span)
+            [span_6](start_span)<a href="https://linkedin.com/in/maanapriyanshurajput" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>[span_6](end_span)
+        </div>
+    </header>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-code"></i> Languages & Libs</h3>
+                <ul>
+                    [span_7](start_span)[span_8](start_span)<li>Python (Pandas, NumPy, Regex)[span_7](end_span)[span_8](end_span)</li>
+                    [span_9](start_span)<li>Scikit-learn, XGBoost, Random Forest[span_9](end_span)</li>
+                    [span_10](start_span)[span_11](start_span)<li>SQL (CTEs, Window Functions, Joins)[span_10](end_span)[span_11](end_span)</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-gears"></i> Data Processing</h3>
+                <ul>
+                    [span_12](start_span)<li>ETL Pipeline Construction[span_12](end_span)</li>
+                    [span_13](start_span)[span_14](start_span)<li>Data Cleaning & Validation[span_13](end_span)[span_14](end_span)</li>
+                    [span_15](start_span)[span_16](start_span)<li>Feature Engineering[span_15](end_span)[span_16](end_span)</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-chart-pie"></i> BI & Visualization</h3>
+                <ul>
+                    [span_17](start_span)[span_18](start_span)<li>Power BI (DAX, Drill-through, KPIs)[span_17](end_span)[span_18](end_span)</li>
+                    [span_19](start_span)[span_20](start_span)<li>Advanced Excel[span_19](end_span)[span_20](end_span)</li>
+                    [span_21](start_span)<li>Matplotlib, Seaborn, Tableau[span_21](end_span)</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-database"></i> Databases & Tools</h3>
+                <ul>
+                    [span_22](start_span)[span_23](start_span)<li>MySQL & PostgreSQL[span_22](end_span)[span_23](end_span)</li>
+                    [span_24](start_span)<li>Google BigQuery[span_24](end_span)</li>
+                    [span_25](start_span)[span_26](start_span)<li>Git, GitHub, VS Code[span_25](end_span)[span_26](end_span)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            
+            <div class="job-card">
+                <div class="job-header">
+                    <h3 class="job-title">Sales Data Analyst <span>@ Ikvans Healthcare Pvt. [span_27](start_span)Ltd.</span></h3>[span_27](end_span)
+                    [span_28](start_span)<span class="job-date">Jul 2025 - Feb 2026</span>[span_28](end_span)
+                </div>
+                <ul class="job-bullets">
+                    [span_29](start_span)<li>Analyzed ~30,000 batch-wise pharmaceutical sales records using Excel and SQL engines[span_29](end_span).</li>
+                    [span_30](start_span)<li>Determined key product demand patterns and evaluated structural inventory movements across distribution cycles[span_30](end_span).</li>
+                    [span_31](start_span)<li>Prepared comprehensive monthly sales reports and evaluated distributor performance to guide management's optimization strategy[span_31](end_span).</li>
+                    [span_32](start_span)<li>Isolated fast-moving vs. slow-moving stock lines to build foundational data models for proactive pricing structural configurations[span_32](end_span).</li>
+                </ul>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <h3 class="job-title">Data Analyst Intern <span>@ AAM Infotech Pvt. [span_33](start_span)Ltd.</span></h3>[span_33](end_span)
+                    [span_34](start_span)<span class="job-date">Jan 2025 - Jul 2025</span>[span_34](end_span)
+                </div>
+                <ul class="job-bullets">
+                    [span_35](start_span)<li>Cleaned and structured raw transactional datasets utilizing Python processing packages (Pandas, Regex) and analytical SQL queries[span_35](end_span).</li>
+                    [span_36](start_span)<li>Eliminated systemic duplicate data rows and verified complex relational constraints across normalized database targets[span_36](end_span).</li>
+                    [span_37](start_span)<li>Developed targeted Power BI reporting dashboards for cross-departmental KPI telemetry tracking structures[span_37](end_span).</li>
+                    [span_38](start_span)<li>Accelerated executive business intelligence extraction speeds for a dedicated team of senior data professionals[span_38](end_span).</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-content">
+                    [span_39](start_span)<h3>Rossmann Performance Insights</h3>[span_39](end_span)
+                    [span_40](start_span)<p>Analyzed 844,338 historical sales transactions across 1,115 stores in Germany to evaluate baseline performance factors impacting growth patterns, promotional strategies, and seasonality metrics[span_40](end_span).</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        [span_41](start_span)<span class="tag">PostgreSQL</span>[span_41](end_span)
+                        [span_42](start_span)[span_43](start_span)<span class="tag">Power BI</span>[span_42](end_span)[span_43](end_span)
+                        <span class="tag">Feature Engineering</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    [span_44](start_span)<a href="https://github.com/maanapriyanshurajput" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Repository</a>[span_44](end_span)
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    [span_45](start_span)<h3>Predictive Analytics for Sales Forecasting</h3>[span_45](end_span)
+                    [span_46](start_span)<p>Built statistical and machine learning models on top of historical transaction files to forecast demand trends, isolate seasonal spikes, and monitor general customer purchasing tendencies over time[span_46](end_span).</p>
+                    <div class="project-tags">
+                        [span_47](start_span)<span class="tag">Scikit-learn</span>[span_47](end_span)
+                        [span_48](start_span)<span class="tag">Predictive Modeling</span>[span_48](end_span)
+                        [span_49](start_span)<span class="tag">Time Series</span>[span_49](end_span)
+                        [span_50](start_span)<span class="tag">Power BI</span>[span_50](end_span)
+                    </div>
+                </div>
+                <div class="project-links">
+                    [span_51](start_span)<a href="https://github.com/maanapriyanshurajput" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Repository</a>[span_51](end_span)
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="edu-cert-container">
+            <div>
+                <h2 class="section-title">Education</h2>
+                <div class="edu-item">
+                    [span_52](start_span)<h4>MSc in Data Science</h4>[span_52](end_span)
+                    [span_53](start_span)<div class="edu-sub">Chandigarh University</div>[span_53](end_span)
+                    [span_54](start_span)<div class="edu-date">Aug 2024 - Jun 2026 (Expected)</div>[span_54](end_span)
+                </div>
+                <div class="edu-item">
+                    [span_55](start_span)<h4>Bachelor of Computer Applications (BCA)</h4>[span_55](end_span)
+                    <div class="edu-sub">L.N. [span_56](start_span)Mishra College of Business Management</div>[span_56](end_span)
+                    [span_57](start_span)<div class="edu-date">2020 - 2023</div>[span_57](end_span)
+                </div>
+                <div class="edu-item">
+                    <h4>Data Analytics Graduate Certificate</h4>
+                    [span_58](start_span)<div class="edu-sub">Ducat IT Training School</div>[span_58](end_span)
+                    [span_59](start_span)<div class="edu-date">Jul 2024 - Jul 2025</div>[span_59](end_span)
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">Certifications & Languages</h2>
+                <div class="cert-item">
+                    <h4>Professional Credentials</h4>
+                    <div class="cert-sub">IBM Data Science — Coursera</div>
+                    <div class="cert-sub">Career Essentials in Data Analysis — Microsoft & LinkedIn</div>
+                    <div class="cert-sub">Journey into Data Science with Python — CodeSignal</div>
+                </div>
+                <div class="cert-item">
+                    <h4>Languages</h4>
+                    <div class="cert-sub" style="color: var(--text-muted)">
+                        Native: <span style="color: var(--text-main)">Hindi</span><br>
+                        Professional: <span style="color: var(--text-main)">English</span><br>
+                        Learning: <span style="color: var(--text-main)">German (A2 Status)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+            [span_60](start_span)<a href="https://github.com/maanapriyanshurajput" target="_blank"><i class="fa-brands fa-github"></i></a>[span_60](end_span)
+            [span_61](start_span)<a href="https://linkedin.com/in/maanapriyanshurajput" target="_blank"><i class="fa-brands fa-linkedin"></i></a>[span_61](end_span)
+            [span_62](start_span)<a href="mailto:maanapriyanshu@gmail.com"><i class="fa-regular fa-envelope"></i></a>[span_62](end_span)
+        </div>
+        <p>&copy; 2026 Priyanshu Singh. Built for responsiveness and speed.</p>
+    </footer>
+
+</body>
+</html>
+
